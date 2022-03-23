@@ -1,0 +1,10 @@
+{
+    "java.project.sourcePaths": [
+        "lesson-5",
+        "lesson-4",
+        "lesson-2",
+        "lesson-1",
+        "lesson-6"
+    ],
+    "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx2G -Xms100m"
+}

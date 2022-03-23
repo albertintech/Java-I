@@ -21,5 +21,7 @@ public class LightningDist {
 
       System.out.println("Lightning strike was approximately");
       System.out.println(distInMiles + " miles away.");
+
+      scnr.close();
    }
 }

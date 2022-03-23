@@ -11,11 +11,13 @@ public class GasOilMixRatio {
         gasVolume = scnr.nextDouble();
 
         System.out.print("Enter oil volume: ");
-        oilVolume = scnr.nextDobule();
+        oilVolume = scnr.nextDouble();
 
         mixRatio = gasVolume / oilVolume;
 
         System.out.print("Gas to oil mix ratio is " +
             mixRatio + ":1");
+        
+        scnr.close();
     }
 }

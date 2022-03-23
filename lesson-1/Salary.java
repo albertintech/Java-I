@@ -8,6 +8,8 @@ public class Salary {
       wage = scnr.nextInt();
 
       System.out.print("Salary is ");         
-      System.out.println(wage * 40 * 52);     
+      System.out.println(wage * 40 * 52);
+      
+      scnr.close();
    } 
 }
