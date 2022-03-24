@@ -6,7 +6,10 @@ public class Salary {
       double annualSalary;
       double monthlySalary;
       double hoursPerWeek;
-      int weeksPerYear;                          
+      int weeksPerYear;
+      final int MONTHS_PER_YEAR;
+      
+      MONTHS_PER_YEAR = 12;
 
       Scanner scnr = new Scanner(System.in);
       System.out.print("Hourly wage is: $");
@@ -23,7 +26,7 @@ public class Salary {
       System.out.printf("%.2f", annualSalary);
       System.out.println();
       
-      monthlySalary = (hourlyWage * hoursPerWeek * weeksPerYear) / 12;
+      monthlySalary = (hourlyWage * hoursPerWeek * weeksPerYear) / MONTHS_PER_YEAR;
       System.out.print("Monthly salary is: $");
       System.out.printf("%.2f", monthlySalary);
       System.out.println();
