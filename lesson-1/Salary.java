@@ -1,14 +1,14 @@
 import java.util.Scanner;
 
-public class Salary {                         
-   public static void main (String [] args) { 
+public class Salary {
+   public static void main(String[] args) {
       double hourlyWage;
       double annualSalary;
       double monthlySalary;
       double hoursPerWeek;
       int weeksPerYear;
       final int MONTHS_PER_YEAR;
-      
+
       MONTHS_PER_YEAR = 12;
 
       Scanner scnr = new Scanner(System.in);
@@ -22,15 +22,15 @@ public class Salary {
       weeksPerYear = scnr.nextInt();
 
       annualSalary = hourlyWage * hoursPerWeek * weeksPerYear;
-      System.out.print("Annual salary is: $");         
+      System.out.print("Annual salary is: $");
       System.out.printf("%.2f", annualSalary);
       System.out.println();
-      
+
       monthlySalary = (hourlyWage * hoursPerWeek * weeksPerYear) / MONTHS_PER_YEAR;
       System.out.print("Monthly salary is: $");
       System.out.printf("%.2f", monthlySalary);
       System.out.println();
 
       scnr.close();
-   } 
+   }
 }
