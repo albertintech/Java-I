@@ -1,4 +1,4 @@
-public class Scratch {
+public class Scratch2 {
     public static void main(String[] args) {
         // int y = 9;
         // int z = 3;
