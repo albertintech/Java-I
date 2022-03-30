@@ -17,18 +17,35 @@ import java.util.Scanner;
 public class CostStructure {
     public static void main(String[] args) {
         Scanner scnr = new Scanner(System.in);
-        // int passengerAge;
-        // int carryOns;
-        // int checkedBags;
-        // int airFare;
+        int passengerAge;
+        int carryOns;
+        int checkedBags;
+        int airFare;
 
-        // passengerAge = scnr.nextInt();
-        // carryOns = scnr.nextInt();
-        // checkedBags = scnr.nextInt();
+        passengerAge = scnr.nextInt();
+        carryOns = scnr.nextInt();
+        checkedBags = scnr.nextInt();
 
-        // /* Type your code here. */
+        if (passengerAge >= 60) {
+            airFare = 290; // Senior
+        } else if (passengerAge <= 2) {
+            airFare = 0; // Lap child
+        } else { // Regular: 2 < age < 60
+            airFare = 300;
+        }
 
-        // System.out.println(airFare);
+        if (carryOns > 0) {
+            airFare += 10;
+        }
+
+        if (checkedBags == 2) {
+            airFare += 25;
+        } else if (checkedBags >= 3) {
+            airFare += 25 + (checkedBags - 2) * 50; // 2nd bag is $25. Each bag beyond 2nd is $50
+        }
+        // Note: 0 or 1 bags is $0, so no adjustment to airfare
+
+        System.out.println(airFare);
         scnr.close();
     }
 }
