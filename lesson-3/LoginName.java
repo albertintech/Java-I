@@ -7,6 +7,23 @@ import java.util.Scanner;
 public class LoginName {
     public static void main(String[] args) {
         Scanner scnr = new Scanner(System.in);
+        String firstName;
+        String lastName;
+        String loginName;
+        int fourDigits;
+
+        firstName = scnr.next();
+        lastName = scnr.next();
+        fourDigits = scnr.nextInt();
+
+        loginName = lastName;
+        if (lastName.length() > 5) {
+            loginName = lastName.substring(0, 5);
+        }
+        loginName += firstName.charAt(0);
+        loginName += (fourDigits % 100);
+
+        System.out.println("Your login name: " + loginName);
 
         scnr.close();
     }
