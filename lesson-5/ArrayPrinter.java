@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class ArrayPrinter {
+    @SuppressWarnings("resource")
     public static void main(String[] args) {
         Scanner scnr = new Scanner(System.in);
         final int NUM_ELEMENTS = 8;
@@ -20,6 +21,5 @@ public class ArrayPrinter {
         }
 
         System.out.println();
-        scnr.close();
     }
 }
