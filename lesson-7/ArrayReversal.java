@@ -27,12 +27,14 @@ public class ArrayReversal {
             System.out.print("Value:  ");
             userVals[i] = scnr.nextInt();
         }
+
         // Array values as entered by user
         System.out.print("\nOriginal values: ");
         for (i = 0; i < userVals.length; ++i) {
             System.out.print(userVals[i] + " ");
         }
         System.out.println();
+
         // Call method to reverse array values
         reverseVals(userVals);
 
