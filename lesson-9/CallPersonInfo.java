@@ -12,7 +12,6 @@ public class CallPersonInfo {
 
         person1.setNumKids(personsKid);
 
-
         System.out.println("Kids: " + person1.getNumKids());
         person1.incNumKids();
         System.out.println("New baby, kids now: " + person1.getNumKids());
