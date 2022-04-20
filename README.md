@@ -1,2 +1,2 @@
 # Java I
-Repo created for Rio Salado CIS163AA Java Programming Level I
+Repo created for a Java I course
