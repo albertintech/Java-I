@@ -1,15 +1,26 @@
 public class Artwork {
-   // TODO: Declare private fields - title, yearCreated
-   
-   // TODO: Declare private field artist of type Artist 
 
-   // TODO: Define default constructor
-   
-   // TODO: Define get methods: getTitle(), getYearCreated()
+   private String title;
+   private int yearCreated;
+   private Artist artist;
 
-   // TODO: Define second constructor to initialize 
-   //       private fields (title, yearCreated, artist)
-
-   // TODO: Define printInfo() method
-   //       Call the printInfo() method in Artist.java to print an artist's information                                                                                     
+   public Artwork() {
+       title = "NoTitle";
+       yearCreated = 0;
+   }
+   public String getTitle(String userTitle) {
+       return title;
+   }
+   public int getYearCreated(int userYearCreated) {
+       return yearCreated;
+   }
+   public Artwork(String userTitle, int userYearCreated, Artist userArtist) {
+       title = userTitle;
+       yearCreated = userYearCreated;
+       artist = userArtist;
+   }
+   public printInfo() {
+       System.out.println("Artist: " + artist);
+       System.out.println("Title: " + title + ", " + yearCreated);
+   }                                                                                 
 }
