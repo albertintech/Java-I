@@ -28,10 +28,20 @@ public class Artist {
         return deathYear;
     }
 
-    // TODO: Define printInfo() method
-    // If deathYear is entered as -1, only print birthYear
     public void printInfo() {
-        System.out.println("");
+        if (deathYear > 0 && birthYear > 0) {
+            System.out.print("Artist: " + artistName);
+            System.out.print(" (" + birthYear + " to ");
+            System.out.println(deathYear + ")");
+        } else if (birthYear > 0 && deathYear < 0) {
+            System.out.print("Artist: " + artistName);
+            System.out.print(" (" + birthYear + " to ");
+            System.out.println("present)");
+        } else {
+            System.out.print("Artist: " + artistName);
+            System.out.println(" (unknown)");
+        }
+
     }
 
 }
