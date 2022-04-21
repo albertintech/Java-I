@@ -5,15 +5,15 @@ public class Artwork {
     private Artist artist;
 
     public Artwork() {
-        title = "NoTitle";
-        yearCreated = 0;
+        title = "unknown";
+        yearCreated = -1;
     }
 
-    public String getTitle(String userTitle) {
+    public String getTitle() {
         return title;
     }
 
-    public int getYearCreated(int userYearCreated) {
+    public int getYearCreated() {
         return yearCreated;
     }
 
@@ -24,7 +24,7 @@ public class Artwork {
     }
 
     public void printInfo() {
-        System.out.println("Artist: " + artist);
+        artist.printInfo();
         System.out.println("Title: " + title + ", " + yearCreated);
     }
 }

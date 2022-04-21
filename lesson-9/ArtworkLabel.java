@@ -17,7 +17,9 @@ public class ArtworkLabel {
         yearCreated = scnr.nextInt();
 
         Artist userArtist = new Artist(userArtistName, userBirthYear, userDeathYear);
-
+        System.out.println(userBirthYear);
+        System.out.println(userDeathYear);
+        
         Artwork newArtwork = new Artwork(userTitle, yearCreated, userArtist);
 
         newArtwork.printInfo();

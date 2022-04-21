@@ -12,8 +12,8 @@ public class Artist {
 
     public Artist(String userArtistName, int userBirthYear, int userDeathYear) {
         artistName = userArtistName;
-        userBirthYear = birthYear;
-        userDeathYear = deathYear;
+        birthYear = userBirthYear;
+        deathYear = userDeathYear;
     }
 
     public String getName() {
