@@ -1,14 +1,37 @@
 public class Artist {
-    // TODO: Declare private fields - artistName, birthYear, deathYear
 
-    // TODO: Define default constructor
+    private String artistName;
+    private int birthYear;
+    private int deathYear;
 
-    // TODO: Define second constructor to initialize
-    // private fields (artistName, birthYear, deathYear)
+    public Artist() {
+        artistName = "unknown";
+        birthYear = -1;
+        deathYear = -1;
+    }
 
-    // TODO: Define get methods: getName(), getBirthYear(), getDeathYear()
+    public Artist(String userArtistName, int userBirthYear, int userDeathYear) {
+        artistName = userArtistName;
+        userBirthYear = birthYear;
+        userDeathYear = deathYear;
+    }
+
+    public String getName() {
+        return artistName;
+    }
+
+    public int getBirthYear() {
+        return birthYear;
+    }
+
+    public int getDeathYear() {
+        return deathYear;
+    }
 
     // TODO: Define printInfo() method
     // If deathYear is entered as -1, only print birthYear
+    public void printInfo() {
+        System.out.println("");
+    }
 
 }
