@@ -1,11 +1,9 @@
 public class Team {
-    // TODO: Declare private fields - name, wins, losses
+
     private String name;
     private int wins;
     private int losses;
 
-    // TODO: Define mutator methods -
-    // setName(), setWins(), setLosses()
     public void setName(String userName) {
         name = userName;
     }
@@ -18,8 +16,6 @@ public class Team {
         losses = userLosses;
     }
 
-    // TODO: Define accessor methods -
-    // getName(), getWins(), getLosses()
     public String getName() {
         return name;
     }
@@ -32,12 +28,10 @@ public class Team {
         return losses;
     }
 
-    // TODO: Define getWinPercentage()
     public double getWinPercentage() {
         return wins / (double) (wins + losses);
     }
 
-    // TODO: Define printStanding()
     public void printStanding() {
         System.out.print("Win percentage: ");
         System.out.printf("%.2f", getWinPercentage());
