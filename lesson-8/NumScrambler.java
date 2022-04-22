@@ -1,4 +1,5 @@
-import java.util.Scanner;
+
+// import java.util.Scanner;
 import java.util.ArrayList;
 
 public class NumScrambler {
@@ -23,8 +24,9 @@ public class NumScrambler {
         }
     }
 
+    // @SuppressWarnings("resource")
     public static void main(String[] args) {
-        Scanner scnr = new Scanner(System.in);
+        // Scanner scnr = new Scanner(System.in);
         ArrayList<Integer> numsToScramble = new ArrayList<Integer>();
         ArrayList<Integer> resultNums = new ArrayList<Integer>();
 
