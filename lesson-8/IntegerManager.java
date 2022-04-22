@@ -1,30 +1,16 @@
-
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class IntegerManager {
-    public static void printSize(ArrayList<Integer> numsList) {
-        System.out.println("size " + numsList.size());
-    }
-
-    @SuppressWarnings("resource")
     public static void main(String[] args) {
-        Scanner scnr = new Scanner(System.in);
-        int currVal;
         ArrayList<Integer> intList = new ArrayList<Integer>();
 
-        printSize(intList);
+        intList.add(1);
+        intList.add(4);
+        intList.add(9);
 
-        currVal = scnr.nextInt();
-        while (currVal >= 0) {
-            intList.add(currVal);
-            currVal = scnr.nextInt();
-        }
+        intList.set(0, intList.get(2) - intList.get(1));
+        intList.set(2, intList.get(0) - intList.get(1));
 
-        printSize(intList);
-
-        intList.clear();
-
-        printSize(intList);
+        System.out.println(intList.get(2) + " " + intList.get(1));
     }
 }
