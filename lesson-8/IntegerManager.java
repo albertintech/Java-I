@@ -1,16 +1,31 @@
 import java.util.ArrayList;
 
 public class IntegerManager {
+    public static void printItems(ArrayList<Integer> numsList) {
+        int i;
+
+        System.out.print("items:");
+
+        for (i = 0; i < numsList.size(); ++i) {
+            System.out.print(" " + numsList.get(i));
+        }
+
+        System.out.println();
+    }
+
     public static void main(String[] args) {
+        int i;
         ArrayList<Integer> intList = new ArrayList<Integer>();
 
-        intList.add(1);
-        intList.add(4);
-        intList.add(9);
+        for (i = 0; i < 5; ++i) {
+            intList.add(i);
+        }
+        printItems(intList);
 
-        intList.set(0, intList.get(2) - intList.get(1));
-        intList.set(2, intList.get(0) - intList.get(1));
+        intList.remove(1);
+        printItems(intList);
 
-        System.out.println(intList.get(2) + " " + intList.get(1));
+        intList.add(1, 7);
+        printItems(intList);
     }
 }
