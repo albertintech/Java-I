@@ -1,3 +1,5 @@
+package ArrayListPrint;
+
 public class Business {
     protected String name;
     protected String address;
