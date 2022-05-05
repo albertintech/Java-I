@@ -2,6 +2,8 @@
     "java.project.sourcePaths": [
         "lesson-9",
         "lesson-8",
-        "lesson-10"
+        "lesson-12/L12_Buttons",
+        "lesson-10",
+        "lesson-12/L12_Circle"
     ]
 }
