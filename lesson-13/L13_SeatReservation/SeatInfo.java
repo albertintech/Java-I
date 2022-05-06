@@ -1,14 +1,22 @@
+/*
+   Name:  Albert Ramos
+   Class: CIS163AA, Lesson 13 Lab 1
+   Date:  May 6, 2022
+*/
+
 package L13_SeatReservation;
 
 public class SeatInfo {
    private String firstName; // First name
    private String lastName;  // Last name
+   private String seatClass; // seat class
    private int amtPaid;      // Amount paid
 
    // Method to initialize Seat fields
-   public void reserveSeat(String inFirstName, String inLastName, int ticketCost) {
+   public void reserveSeat(String inFirstName, String inLastName, String inSeatClass, int ticketCost) {
       firstName = inFirstName;
       lastName = inLastName;
+      seatClass = inSeatClass;
       amtPaid = ticketCost;
    }
 
@@ -16,6 +24,7 @@ public class SeatInfo {
    public void makeEmpty() {
       firstName = "empty";
       lastName = "empty";
+      seatClass = "empty";
       amtPaid = 0;
    }
 
@@ -28,6 +37,7 @@ public class SeatInfo {
    public void printSeatInfo() {
       System.out.print(firstName + " ");
       System.out.print(lastName + " ");
+      System.out.print(seatClass + " ");
       System.out.println("Paid: " + amtPaid);
    }
 
@@ -37,6 +47,10 @@ public class SeatInfo {
 
    public String getLastName() {
       return lastName;
+   }
+
+   public String getSeatClass() {
+      return seatClass;
    }
 
    public int getAmountPaid() {

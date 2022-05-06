@@ -1,3 +1,9 @@
+/*
+   Name:  Albert Ramos
+   Class: CIS163AA, Lesson 13 Lab 1
+   Date:  May 6, 2022
+*/
+
 package L13_SeatReservation;
 
 import java.awt.GridBagConstraints;
@@ -19,16 +25,18 @@ public class SeatReservationFrame extends JFrame implements ActionListener {
    private JTextField firstNameField; // Holds first name
    private JTextField lastNameField; // Holds last name
    private JFormattedTextField seatNumField; // Holds seat number
+   private JTextField seatClassField; // Holds class
    private JFormattedTextField amountPaidField; // Holds ticket cost
    private JLabel tableLabel; // Label for table display
    private JLabel seatNumLabel; // Label for seat number
    private JLabel firstNameLabel; // Label for first name
    private JLabel lastNameLabel; // Label for last name
    private JLabel amountPaidLabel; // Label for amount paid
+   private JLabel seatClassLabel; // Label for class
    private JButton reserveButton; // Triggers seat reservation
    private JButton quitButton; // Triggers termination of GUI
    private JTable seatStatusTable; // Table tracks seat reservations
-   private final static int NUM_SEATS = 5; // Number of seat in reservation system
+   private final static int NUM_SEATS = 20; // Number of seat in reservation system
    private static ArrayList<SeatInfo> seatResArr; // ArrayList of Seat objects
 
    /*
@@ -36,9 +44,9 @@ public class SeatReservationFrame extends JFrame implements ActionListener {
     * using a GridBagLayout.
     */
    SeatReservationFrame() {
-      Object[][] tableVals = new Object[5][4]; // Seat reservation table
+      Object[][] tableVals = new Object[20][5]; // Seat reservation table
       String[] columnHeadings = { "Seat Number", "First Name", // Column headings for reservation table
-            "Last Name", "Amount Paid" };
+            "Last Name", "Amount Paid", "Class" };
       GridBagConstraints layoutConst = null; // GUI component layout
       NumberFormat currencyFormat = null; // Format for amount paid
 
@@ -58,18 +66,23 @@ public class SeatReservationFrame extends JFrame implements ActionListener {
       firstNameLabel = new JLabel("First Name:");
       lastNameLabel = new JLabel("Last Name:");
       amountPaidLabel = new JLabel("Amount Paid:");
+      seatClassLabel = new JLabel("Seat Class:");
 
       seatNumField = new JFormattedTextField(NumberFormat.getIntegerInstance());
       seatNumField.setEditable(true);
       seatNumField.setValue(0);
 
-      firstNameField = new JTextField(20);
+      firstNameField = new JTextField(15);
       firstNameField.setEditable(true);
       firstNameField.setText("John");
 
-      lastNameField = new JTextField(20);
+      lastNameField = new JTextField(15);
       lastNameField.setEditable(true);
       lastNameField.setText("Doe");
+
+      seatClassField = new JTextField(15);
+      seatClassField.setEditable(true);
+      seatClassField.setText("Coach");
 
       currencyFormat = NumberFormat.getCurrencyInstance();
       currencyFormat.setMaximumFractionDigits(0);
@@ -155,31 +168,47 @@ public class SeatReservationFrame extends JFrame implements ActionListener {
       layoutConst.gridy = 4;
       add(lastNameField, layoutConst);
 
+      // TODO: Add seatClassLabel and seatClassField
       layoutConst = new GridBagConstraints();
       layoutConst.insets = new Insets(10, 10, 1, 0);
       layoutConst.fill = GridBagConstraints.HORIZONTAL;
       layoutConst.gridx = 3;
       layoutConst.gridy = 3;
-      add(amountPaidLabel, layoutConst);
+      add(seatClassLabel, layoutConst);
 
       layoutConst = new GridBagConstraints();
       layoutConst.insets = new Insets(1, 10, 10, 0);
       layoutConst.fill = GridBagConstraints.HORIZONTAL;
       layoutConst.gridx = 3;
       layoutConst.gridy = 4;
+      add(seatClassField, layoutConst);
+      // ********************************************//
+
+      layoutConst = new GridBagConstraints();
+      layoutConst.insets = new Insets(10, 10, 1, 0);
+      layoutConst.fill = GridBagConstraints.HORIZONTAL;
+      layoutConst.gridx = 4;
+      layoutConst.gridy = 3;
+      add(amountPaidLabel, layoutConst);
+
+      layoutConst = new GridBagConstraints();
+      layoutConst.insets = new Insets(1, 10, 10, 0);
+      layoutConst.fill = GridBagConstraints.HORIZONTAL;
+      layoutConst.gridx = 4;
+      layoutConst.gridy = 4;
       add(amountPaidField, layoutConst);
 
       layoutConst = new GridBagConstraints();
       layoutConst.insets = new Insets(0, 10, 10, 5);
       layoutConst.fill = GridBagConstraints.HORIZONTAL;
-      layoutConst.gridx = 4;
+      layoutConst.gridx = 5;
       layoutConst.gridy = 4;
       add(reserveButton, layoutConst);
 
       layoutConst = new GridBagConstraints();
       layoutConst.insets = new Insets(0, 5, 10, 10);
       layoutConst.fill = GridBagConstraints.HORIZONTAL;
-      layoutConst.gridx = 5;
+      layoutConst.gridx = 6;
       layoutConst.gridy = 4;
       add(quitButton, layoutConst);
    }
@@ -190,6 +219,7 @@ public class SeatReservationFrame extends JFrame implements ActionListener {
       SeatInfo seatElement; // Seat information
       String firstName; // First name
       String lastName; // Last name
+      String seatClass; // Class
       int seatNum; // Seat number
       int amtPaid; // Amount paid
 
@@ -214,10 +244,11 @@ public class SeatReservationFrame extends JFrame implements ActionListener {
          else {
             firstName = firstNameField.getText();
             lastName = lastNameField.getText();
+            seatClass = seatClassField.getText();
             amtPaid = ((Number) amountPaidField.getValue()).intValue();
 
             seatElement = new SeatInfo(); // Create new Seat object
-            seatElement.reserveSeat(firstName, lastName, amtPaid);
+            seatElement.reserveSeat(firstName, lastName, seatClass, amtPaid);
             seatResArr.set(seatNum, seatElement); // Add seat to ArrayList
 
             updateTable(); // Synchronize table with sts ArrayList
@@ -236,6 +267,7 @@ public class SeatReservationFrame extends JFrame implements ActionListener {
       final int firstNameCol = 1; // Col num for first names
       final int lastNameCol = 2; // Col num for last names
       final int paidCol = 3; // Col num for amount paid
+      final int seatClassCol = 4; // Col num for
       int i; // Loop index
 
       for (i = 0; i < NUM_SEATS && i < seatResArr.size(); ++i) {
@@ -243,11 +275,13 @@ public class SeatReservationFrame extends JFrame implements ActionListener {
             seatStatusTable.setValueAt(null, i, seatNumCol);
             seatStatusTable.setValueAt(null, i, firstNameCol);
             seatStatusTable.setValueAt(null, i, lastNameCol);
+            seatStatusTable.setValueAt(null, i, seatClassCol);
             seatStatusTable.setValueAt(null, i, paidCol);
          } else { // Update table with content in the seatResArr ArrayList
             seatStatusTable.setValueAt(i, i, seatNumCol);
             seatStatusTable.setValueAt(seatResArr.get(i).getFirstName(), i, firstNameCol);
             seatStatusTable.setValueAt(seatResArr.get(i).getLastName(), i, lastNameCol);
+            seatStatusTable.setValueAt(seatResArr.get(i).getSeatClass(), i, seatClassCol);
             seatStatusTable.setValueAt(seatResArr.get(i).getAmountPaid(), i, paidCol);
          }
       }
