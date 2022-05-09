@@ -2,54 +2,54 @@
 
 Repo created for a Java I course
 
-Two lessons learned about file stucture in VSCode and on GitHub:
+A lesson learned about file stucture appearance in VSCode and on GitHub:
 
-If you have nested folders in your project, VSCode will will display them
+If you have nested folders in your project, VSCode and GitHub will will display them
 "in-line" like so:
 
-- folder1/folder2/folder3
+- folder1/nested
 
 I would prefer to see this:
 
-- folder1
-  -folder2
-  -folder3
+<ul>
+<li>📁 folder
+  <ul>
+    <li>📁 nested_folder
+      <ul>
+        <li>📁 another_nested_folder</li>
+      </ul>
+    </li>
+  </ul>
+  </li>
+</ul>
 
-In order to see folders in a cascading stucture, do the following:
+This is not really a big deal, unless you have a list of folders with only one
+sticking out like a sore thumb:
 
-- Preferences > Settings > search 'folder' > Explorer: Compact Folders
-- Uncheck the box for Explorer: Compact Folders
-
-This will only affect how nested folders look in VSCode.
-
-Your folder stucture on GitHub may still appear in-line.
-
-This is not really a big deal, unless you have a bunch of folders, some nested,
-but none of them displaying in-line except for one sticking out like a sore thumb
-like so:
-
-folder1
-folder2
-folder3/nested
-folder4
+- 📁 folder1
+- 📁 folder2
+- 📁 folder3/nested
+- 📁 folder4
+- 📁 folder5
 
 Grrrr! Houston, we have a problem!
 
 After much gnashing of persnickety teeth, the answer is simple: make sure the
-first nested folder is not the only thing the root folder!
+nested folder is not the only object in the root folder!
 
-Taking the above example, we can just add an "invisible" empty .gitkeep file
-to correct the abberation:
+Taking the above example, we can just add an "invisible" empty .gitkeep file,
+or any other type of file or another folder, to correct the abberation:
 
-folder3
--.gitkeep
--nested
+- 📁 folder3
+  - 📄 .gitkeep
+  - 📁 nested
 
-Now your folders will look nice and tidy:
+Now your folders will look nice and tidy from the repository level:
 
-folder1
-folder2
-folder3
-folder4
+- 📁 folder1
+- 📁 folder2
+- 📁 folder3
+- 📁 folder4
+- 📁 folder5
 
-Hope this helps! Bye for now!
+Hope this helps! Bye for now! 👋🏼
