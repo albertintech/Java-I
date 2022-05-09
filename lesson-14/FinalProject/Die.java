@@ -8,6 +8,7 @@ public class Die {
     public Die() {
         faceValue = 0;
     }
+
     public int roll() {
         int faceValue;
         SecureRandom randGen = new SecureRandom();
@@ -16,18 +17,18 @@ public class Die {
         return faceValue;
     }
 
-    public boolean equals(Die x) {
-        if (faceValue != x.faceValue) {
-            return false;
-        } else {
+    public boolean equals(Die x, Die y) {
+        if (x.faceValue == y.faceValue) {
             return true;
+        } else {
+            return false;
         }
     }
 
     public String toString(int x) {
         String faceValueAsString;
         switch (x) {
-            case 1: 
+            case 1:
                 faceValueAsString = "one";
                 break;
             case 2:
