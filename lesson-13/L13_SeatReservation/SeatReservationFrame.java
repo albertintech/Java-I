@@ -168,7 +168,7 @@ public class SeatReservationFrame extends JFrame implements ActionListener {
       layoutConst.gridy = 4;
       add(lastNameField, layoutConst);
 
-      // TODO: Add seatClassLabel and seatClassField
+      // ********************************************//
       layoutConst = new GridBagConstraints();
       layoutConst.insets = new Insets(10, 10, 1, 0);
       layoutConst.fill = GridBagConstraints.HORIZONTAL;
