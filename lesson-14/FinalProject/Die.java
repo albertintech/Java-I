@@ -4,12 +4,11 @@ import java.security.SecureRandom;
 
 public class Die {
     private int faceValue;
-    // TODO: create constructor method
-    // Initializes the die’s value to 0 and instantiates the Random object.
+
     public Die() {
         faceValue = 0;
     }
-    public static int roll() {
+    public int roll() {
         int faceValue;
         SecureRandom randGen = new SecureRandom();
 
@@ -17,16 +16,14 @@ public class Die {
         return faceValue;
     }
 
-    public boolean equals(Die die2) {
-        if (faceValue != die2.faceValue) {
+    public boolean equals(Die x) {
+        if (faceValue != x.faceValue) {
             return false;
         } else {
             return true;
         }
     }
-    // TODO: create toString() method
-    // returns the String “one”, “two”, “three”, “four”, “five”, “six”, “seven”,
-    // “eight”, “nine”, or “ten” depending on the value of the die.
+
     public String toString(int x) {
         String faceValueAsString;
         switch (x) {
