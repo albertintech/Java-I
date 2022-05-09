@@ -1,4 +1,5 @@
-package L14_FinalProject;
+package FinalProject;
+// package L14_FinalProject;
 
 public class Die {
 // TODO: declare variables
