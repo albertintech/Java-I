@@ -7,7 +7,7 @@ A lesson learned about file stucture appearance in VSCode and on GitHub:
 If you have nested folders in your project, VSCode and GitHub will will display them
 "in-line" like so:
 
-- folder1/nested
+- 📁 folder1/nested_folder
 
 I would prefer to see this:
 
@@ -28,7 +28,7 @@ sticking out like a sore thumb:
 
 - 📁 folder1
 - 📁 folder2
-- 📁 folder3/nested
+- 📁 folder3/nested_folder
 - 📁 folder4
 - 📁 folder5
 
@@ -42,7 +42,7 @@ or any other type of file or another folder, to correct the abberation:
 
 - 📁 folder3
   - 📄 .gitkeep
-  - 📁 nested
+  - 📁 nested_folder
 
 Now your folders will look nice and tidy from the repository level:
 
