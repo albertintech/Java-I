@@ -1,18 +1,26 @@
-package FinalProject;
-
-import java.util.InputMismatchException;
 /*
    Name:  Albert Ramos
    Class: CIS163AA, Lesson 14 Final Project
-   Date:  May 10, 2022
+   Date:  May 9, 2022
+   Notes: Overall, the program behaves well. Please note the following:
+       * Did not get the equals() method to work, so I do not use it in main
+       * The program will exit the game if given bad input. I think it would
+       *    take another loop to avoid this outcome, and I attempted to use one,
+       *    but I kept getting infinte loops.
+       * The spec calls for the constructor to instantiate the random object, but
+       * it made more sense to me to put it int the roll() method
 */
 
+package FinalProject;
+
+import java.util.InputMismatchException;
 import java.util.Scanner;
-import java.lang.Math;
+import java.lang.Math; // To use Math.abs
 
 public class DoubleDice {
     @SuppressWarnings("resource")
     public static void main(String[] args) {
+        // Declare variables
         double playerCash = 200.0;
         double bet = 0.0;
         double betWin = 0.0;
@@ -38,7 +46,7 @@ public class DoubleDice {
             }
 
             // Main game logic
-            // Game will quit only if player bet is equal to zero
+            // Game will quit if player bet is equal to zero or gives bad input
             if (bet == 0) {
                 break;
             } else if (bet <= playerCash && bet > 0.0) {

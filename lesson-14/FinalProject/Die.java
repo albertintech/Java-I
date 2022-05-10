@@ -1,11 +1,13 @@
 /*
    Name:  Albert Ramos
    Class: CIS163AA, Lesson 14 Final Project
-   Date:  May 10, 2022
+   Date:  May 9, 2022
+   * See notes in DoubleDice.java for details
 */
+
 package FinalProject;
 
-import java.security.SecureRandom;
+import java.security.SecureRandom; // to generate nondeterministic random numbers
 
 public class Die {
     private int faceValue;
@@ -15,6 +17,7 @@ public class Die {
         faceValue = 0;
     }
 
+    // roll() method
     public int roll() {
         int faceValue;
         SecureRandom randGen = new SecureRandom();
@@ -23,16 +26,16 @@ public class Die {
         return faceValue;
     }
 
-    // Did not see a need to implement this method
-    public boolean equals(Die x, Die y) {
-        if (x.faceValue == y.faceValue) {
+    // Did not implement this method
+    public boolean equals(Die die2) {
+        if (die2.faceValue == this.faceValue) {
             return true;
         } else {
             return false;
         }
     }
 
-    
+    // Switch case to return die face value as String
     public String toString(int x) {
         String faceValueAsString;
         switch (x) {
