@@ -1,6 +1,12 @@
 package FinalProject;
 
 import java.util.InputMismatchException;
+/*
+   Name:  Albert Ramos
+   Class: CIS163AA, Lesson 14 Final Project
+   Date:  May 10, 2022
+*/
+
 import java.util.Scanner;
 import java.lang.Math;
 
@@ -16,17 +22,23 @@ public class DoubleDice {
         Die myDie1 = new Die();
         Die myDie2 = new Die();
 
+        // Game will continue only as long as player has > $0 on hand
         while (playerCash > 0.0) {
             System.out.printf("You have: $%.2f\n", playerCash);
             Scanner scnr = new Scanner(System.in);
             System.out.print("How much would you like to bet (Enter 0 to quit)? ");
+
+            // Try/catch block performs input validation check
             try {
                 bet = scnr.nextDouble();
             } catch (InputMismatchException e) {
-                System.out.println("You must enter whole or decimal numbers only");
+                System.out.println("You must enter whole or decimal numbers only!");
                 System.out.println("Goodbye!");
                 System.exit(0);
             }
+
+            // Main game logic
+            // Game will quit only if player bet is equal to zero
             if (bet == 0) {
                 break;
             } else if (bet <= playerCash && bet > 0.0) {
@@ -49,9 +61,10 @@ public class DoubleDice {
             }
         }
 
+        // Exit messages depending on player cash at end of game
         if (playerCash > 200.0001) {
             System.out.println("See you around, winner!");
-        } else if (Math.abs(playerCash) < 0.0001) {
+        } else if (Math.abs(playerCash) < 0.0001) { // Use the Math.abs to make sure
             System.out.println("You are out of money!");
             System.out.println("Better luck next time!");
         } else {

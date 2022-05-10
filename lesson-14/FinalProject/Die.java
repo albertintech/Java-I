@@ -1,3 +1,8 @@
+/*
+   Name:  Albert Ramos
+   Class: CIS163AA, Lesson 14 Final Project
+   Date:  May 10, 2022
+*/
 package FinalProject;
 
 import java.security.SecureRandom;
@@ -5,6 +10,7 @@ import java.security.SecureRandom;
 public class Die {
     private int faceValue;
 
+    // Constructor
     public Die() {
         faceValue = 0;
     }
@@ -17,6 +23,7 @@ public class Die {
         return faceValue;
     }
 
+    // Did not see a need to implement this method
     public boolean equals(Die x, Die y) {
         if (x.faceValue == y.faceValue) {
             return true;
@@ -25,6 +32,7 @@ public class Die {
         }
     }
 
+    
     public String toString(int x) {
         String faceValueAsString;
         switch (x) {
